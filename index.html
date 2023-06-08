@@ -31,7 +31,7 @@
 
 </head>
 
-<body oncontextmenu="return false">
+<body oncontextmenu="return false" style="user-select: none;">
 
   <!-- ======= Mobile nav toggle button ======= -->
   <!-- <button type="button" class="mobile-nav-toggle d-xl-none"><i class="bi bi-list mobile-nav-toggle"></i></button> -->
@@ -508,6 +508,44 @@
 
   <script src="https://smtpjs.com/v3/smtp.js"></script>
 
+  <script>
+    // Disable F12 options
+    document.onkeypress = function (event) {
+        event = (event || window.event);
+        if (event.keyCode == 123) {
+        return false;
+        }
+    }
+    document.onmousedown = function (event) {
+        event = (event || window.event);
+        if (event.keyCode == 123) {
+        return false;
+        }
+    }
+    document.onkeydown = function (event) {
+        event = (event || window.event);
+         //disable Ctrl+U and f12
+        if (event.keyCode == 123 ||(event.ctrlKey && (event.keyCode === 85 )) ){
+        return false;
+        }
+    }
+
+   </script>
+
+   <script type="text/javascript">
+    // disable copying and pasting
+    document.addEventListener('copy', function(e) {
+      e.preventDefault();
+    });
+
+    document.addEventListener('cut', function(e) {
+      e.preventDefault();
+    });
+
+    document.addEventListener('paste', function(e) {
+      e.preventDefault();
+    });
+  </script>
   
 </body>
 
